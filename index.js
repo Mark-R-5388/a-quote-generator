@@ -2,13 +2,13 @@ const quoteText = document.querySelector('.quote-text')
 const authorText = document.querySelector('.author-text')
 const randomQuoteBtn = document.querySelector('.random-quote-button')
 
-const QUOTEURL = 'http://quotes.stormconsultancy.co.uk/random.json'
-
 const getQuote = async function () {
-  let response = await fetch(QUOTEURL)
+  let response = await fetch('https://type.fit/api/quotes')
   let responseJSON = await response.json()
-  quoteText.textContent = responseJSON.quote
-  authorText.textContent = '-' + responseJSON.author
+  let randomNumber = Math.floor(Math.random() * 25)
+
+  quoteText.textContent = responseJSON[randomNumber].text
+  authorText.textContent = '-' + responseJSON[randomNumber].author
 }
 
 window.addEventListener('load', getQuote)
