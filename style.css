@@ -63,3 +63,13 @@ body {
   font-size: 2em;
   font-style: italic;
 }
+@media (max-width: 560px) {
+  .header-text {
+    font-size: 1.5em;
+  }
+  .random-quote-button {
+    font-size: 1em;
+    width: 10em;
+    height: 4em;
+  }
+}
